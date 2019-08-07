@@ -2,12 +2,12 @@ package TriFibonacci;
 
 public class TriFibonacci {
 
-    /*
+
     public static void main(String[] args) {
         TriFibonacci triFibonacci = new TriFibonacci();
         System.out.println(triFibonacci.findMissingNumber(new int[] {1,2,3,-1}));
     }
-     */
+
 
     public int findMissingNumber(int[] numbers) {
         int result = -1;
