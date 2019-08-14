@@ -1,15 +1,14 @@
-package TestStandInLine;
+package StandInLine;
 
-import StandInLine.StandInLine;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestStandInLine {
+public class StandInLineTest {
 
     private StandInLine standInLine;
 
     @Test
-    public void testCreatePairs() {
+    public void testStandInLine() {
         standInLine = new StandInLine();
         Assert.assertArrayEquals(new int[]{4, 2, 1, 3}, standInLine.reconstruct(new int[] {2, 1, 1, 0}));
         Assert.assertArrayEquals(new int[]{1, 2, 3, 4, 5}, standInLine.reconstruct(new int[] {0, 0, 0, 0, 0}));
