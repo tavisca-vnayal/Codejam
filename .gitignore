@@ -1,53 +1,61 @@
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
+##########################
+## Java
+##########################
+*.class
 .mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.ear
-*.zip
-*.tar.gz
-*.rar
-*.toDelete
-output/**
-*.class
-*~
-*.iml
-*/.idea/**
-.idea/**
-.idea
-*.log
-*.log.[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]
-*/.classpath
-.classpath
-*/.project
-.project
-.cache/**
+hs_err_pid*
+
+##########################
+## Maven
+##########################
 target/
-build/
-tmp_deb_control/
-tmp_rpm_control/
-tmp_sh/
-.gwt/
-.settings/
-/bin
-bin/
-**/dependency-reduced-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
 pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+##########################
+## IntelliJ
+##########################
+*.iml
+.idea/
+*.ipr
+*.iws
+out/
+.idea_modules/
+
+##########################
+## Eclipse
+##########################
+.metadata
+.classpath
+.project
+.settings/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+
+##########################
+## NetBeans
+##########################
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+##########################
+## OS X
+##########################
 .DS_Store
-**/.gradle
-.gradle/
-**/local.properties
-**/build
-**/target
-**/Californium.properties
-**/.env
-.instance_idm
-.vscode/
-docs/_build
-docs/developerQS/_build
-.factorypath
-.java-version
