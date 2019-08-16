@@ -21,3 +21,11 @@ test {
         showStandardStreams = true
     }
 }
+
+jar {
+    manifest {
+        attributes (
+            'Main-Class': 'Handler.AssignmentsHandler'
+        )
+    }
+}
