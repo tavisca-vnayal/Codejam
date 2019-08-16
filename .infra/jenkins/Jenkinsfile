@@ -36,7 +36,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am Building DockerImage"
-                    docker build -t varunnayal/PlayWithCodejamAssignments:version1.0 .infra/docker/
+                    docker build -t varunnayal/play_with_codejam_assignments:version1.0 .infra/docker/
                 ''',
             label: "Building Docker Image"
             }
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am Pubishing DockerImage"
-                    docker push varunnayal/PlayWithCodejamAssignments:version1.0
+                    docker push varunnayal/play_with_codejam_assignments:version1.0
                 ''',
             label: "Publishing Docker Image"
             }
