@@ -43,7 +43,12 @@ public class AssignmentsHandler {
                         inputData[i] = scanner.nextInt();
                     }
                     int[] reconstructArray = standInLine.reconstruct(inputData);
-                    System.out.println("Reconstrcuted Line : " + reconstructArray);
+                    System.out.print("Reconstrcuted Line : ");
+                    for (int value: reconstructArray
+                         ) {
+                        System.out.print(value + " ");
+                    }
+                    System.out.println();
                     break;
                 case 3:
                     TriFibonacci triFibonacci = new TriFibonacci();
