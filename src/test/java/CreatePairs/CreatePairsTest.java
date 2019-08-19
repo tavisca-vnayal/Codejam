@@ -1,11 +1,10 @@
-package TestCreatePairs;
+package CreatePairs;
 
-import CreatePairs.CreatePairs;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestCreatePairs {
+public class CreatePairsTest {
 
     private CreatePairs createPairs;
 

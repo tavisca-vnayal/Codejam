@@ -1,0 +1,67 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh script: '''
+                    chmod +x gradlew
+                    echo "I am in build step"
+                    ./gradlew build -x test
+                ''',
+            label: "Building Project"
+            }
+        }
+        stage('Test')
+        {
+            steps {
+                sh script: '''
+                    chmod +x gradlew
+                    echo "I am in Test step"
+                    ./gradlew test
+                ''',
+            label: "Running Unit Test Cases"
+            }
+        }
+        stage('Static Code Analysis')
+        {
+            steps {
+                sh script: '''
+                    echo "I am in Sonarqube scan"
+                    ./gradlew sonarqube \
+                      -Dsonar.projectKey=tavisca-vnayal_Codejam \
+                      -Dsonar.organization=tavisca-vnayal \
+                      -Dsonar.host.url=https://sonarcloud.io \
+                      -Dsonar.login=584fb57ec5952c23af82b41650e4baa0649439f9
+                ''',
+            label: "Running Sonarqube Scan"
+            }
+        }
+        stage('Build DockerImage')
+        {
+            steps {
+                sh script: '''
+                    echo "I am Building DockerImage"
+                    docker build -t varunnayal/play_with_codejam_assignments:version1.0 -f ./.infra/docker/Dockerfile .
+                ''',
+            label: "Building Docker Image"
+            }
+        }
+        stage('Publish DockerImage')
+        {
+            steps {
+                sh script: '''
+                    echo "I am Pubishing DockerImage"
+                    docker login -u varunnayal -p rcmadasgupta
+                    docker push varunnayal/play_with_codejam_assignments:version1.0
+                ''',
+            label: "Publishing Docker Image"
+            }
+        }
+    }
+    post{
+    	   always{
+    	     deleteDir()
+    	   }
+    }
+}
+

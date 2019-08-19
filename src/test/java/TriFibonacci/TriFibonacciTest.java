@@ -1,11 +1,10 @@
-package TestTriFibonacci;
+package TriFibonacci;
 
-import TriFibonacci.TriFibonacci;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestTriFibonacci {
+public class TriFibonacciTest {
 
     private TriFibonacci triFibonacci;
 
