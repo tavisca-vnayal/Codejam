@@ -25,9 +25,14 @@ pipeline {
         stage('Static Code Analysis')
         {
             steps {
-                withSonarQubeEnv() { // Will pick the global server connection you have configured
-                     sh './gradlew sonarqube'
-                   }
+                sh script: '''
+                    echo "I am in Sonarqube scan"
+                    ./gradlew sonarqube \
+                      -Dsonar.projectKey=tavisca-vnayal_Codejam \
+                      -Dsonar.organization=tavisca-vnayal \
+                      -Dsonar.host.url=https://sonarcloud.io \
+                      -Dsonar.login=584fb57ec5952c23af82b41650e4baa0649439f9
+                ''',
             label: "Running Sonarqube Scan"
             }
         }
