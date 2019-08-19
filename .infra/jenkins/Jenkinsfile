@@ -18,6 +18,7 @@ pipeline {
                     chmod +x gradlew
                     echo "I am in Test step"
                     ./gradlew clean test
+                    ls build/libs/
                 ''',
             label: "Running Unit Test Cases"
             }
