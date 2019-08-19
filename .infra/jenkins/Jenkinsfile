@@ -25,10 +25,6 @@ pipeline {
         stage('Static Code Analysis')
         {
             steps {
-                sh script: '''
-                    echo "c26e46035bf469f1cb43a7e301763680a8fdda2f"
-                    echo "I am in Sonarqube scan"
-                ''',
                 withSonarQubeEnv() { // Will pick the global server connection you have configured
                      sh './gradlew sonarqube'
                    }
