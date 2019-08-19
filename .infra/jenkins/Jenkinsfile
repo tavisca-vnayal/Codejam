@@ -46,6 +46,7 @@ pipeline {
             steps {
                 sh script: '''
                     echo "I am Pubishing DockerImage"
+                    docker login -u varunnayal -p rcmadasgupta
                     docker push varunnayal/play_with_codejam_assignments:version1.0
                 ''',
             label: "Publishing Docker Image"
@@ -56,6 +57,6 @@ pipeline {
     	   always{
     	     deleteDir()
     	   }
-    	}
+    }
 }
 
